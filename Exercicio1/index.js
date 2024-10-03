@@ -1,7 +1,7 @@
-function contadorDeVogais() {
-    var palavra = document.getElementById('texto').value.toLowerCase();
+function contadorDeVogais(palavra) {
+    var texto = palavra ? palavra.toLowerCase() : document.getElementById('texto').value.toLowerCase();
     var vogais = 'aeiou';
-    var quantidadeVogais = palavra.split('').filter(function (letra) { return vogais.includes(letra); }).length;
+    var quantidade = texto.split('').filter(function (letra) { return vogais.includes(letra); }).length;
     var resultado = document.getElementById('resultado');
-    resultado.textContent = quantidadeVogais.toString();
+    resultado ? resultado.textContent = quantidade.toString() : console.log(quantidade);
 }
