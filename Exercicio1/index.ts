@@ -1,5 +1,3 @@
-
-
 function contadorDeVogais(palavra?: string): void {
     const texto = palavra ? palavra.toLowerCase() : (document.getElementById('texto') as HTMLInputElement).value.toLowerCase();
 
