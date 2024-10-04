@@ -1,3 +1,4 @@
+/* */
 let list = [
     {
         "id": 1,
@@ -28,51 +29,43 @@ function returnNamePerson(id) {
     return BioPerson ? BioPerson.name : 'Nome não econtrado para o id indicado';
 }
 function deletePerson(id) {
-    return list.filter(item => item.id != id);
+    return list.filter(item => item.id !== id);
 }
 function updatePerson(id, novoNome, novaBio) {
     return list.map(item => item.id === id ? Object.assign(Object.assign({}, item), { name: novoNome, bio: novaBio }) : item);
 }
 function returnBioPersonImperative(id) {
-    let i = 0;
-    while (i < list.length) {
+    for (let i = 0; i < list.length; i++) {
         if (list[i].id === id) {
             return list[i].bio;
         }
-        i++;
     }
-    return 'Bio não encontrada para o id indicado';
+    return 'Bio não econtrada para o id indicado';
 }
 function returnNamePersonImperative(id) {
-    let i = 0;
-    while (i < list.length) {
+    for (let i = 0; i < list.length; i++) {
         if (list[i].id === id) {
             return list[i].name;
         }
-        i++;
     }
-    return 'Nome não encontrado para o id indicado';
+    return 'Nome não econtrada para o id indicado';
 }
 function deletePersonImperative(id) {
-    let i = 0;
-    while (i < list.length) {
+    for (let i = 0; i < list.length; i++) {
         if (list[i].id === id) {
             list.splice(i, 1);
-            break;
+            return list;
         }
-        i++;
     }
     return list;
 }
 function updatePersonImperative(id, novoNome, novaBio) {
-    let i = 0;
-    while (i < list.length) {
+    for (let i = 0; i < list.length; i++) {
         if (list[i].id === id) {
             list[i].name = novoNome;
             list[i].bio = novaBio;
-            break;
+            return list;
         }
-        i++;
     }
     return list;
 }
