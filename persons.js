@@ -76,8 +76,11 @@ function updatePersonImperative(id, novoNome, novaBio) {
     }
     return list;
 }
-//console.log('Bio:', returnBioPerson(2))
-//console.log('Nome:', returnNamePerson(1))
-//console.log(deletePerson(3))
-//console.log(updatePerson(4, 'Marie Curie', 'Braba da Quimica'))
+console.log('Bio:', returnBioPerson(2));
+console.log('Nome:', returnNamePerson(1));
+console.log(deletePerson(3));
+console.log(updatePerson(4, 'Luffy', 'Rei dos piratas'));
+console.log('Bio:', returnBioPersonImperative(3));
+console.log('Nome:', returnNamePersonImperative(2));
+console.log(deletePersonImperative(1));
 console.log(updatePersonImperative(4, 'Marie Curie', 'Braba da Quimica'));
