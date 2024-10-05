@@ -109,16 +109,19 @@ function returnBioPerson(id: number): string {
     
     return BioPerson ? BioPerson.bio : 'Bio não econtrada para o id indicado';
 }
-
-console.log('Bio:', returnBioPerson(2))
-
-//resposta no console: 
-
-Bio: "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, 
-filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação 
-teórica e da inteligência artificial"
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Buscar Bio por ID</h3>
+                        <form id="bioForm" class="container-formulario">
+                            <label for="personId">Digite o ID:</label>
+                            <input type="number" id="personId" name="personId" required>
+                            <button type="submit">Buscar Bio</button>
+                        </form>
+
+                        <p id="bioResult" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -132,12 +135,18 @@ function returnNamePerson(id: number): string {
 }
 
 console.log('Nome:', returnNamePerson(1))
-
-//resposta no console: 
-
-Nome: Ada Lovelace
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Retornar o nome a partir de um ID</h3>
+                        <form id="nameForm" class="container-formulario">
+                            <label for="personIdName">Digite o ID:</label>
+                            <input type="number" id="personIdName" name="personIdName" required>
+                            <button type="submit">Buscar Nome</button>
+                        </form>
+                        <p id="nameResult" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -147,30 +156,18 @@ Nome: Ada Lovelace
 function deletePerson(id: number): Person[] {
     return list.filter(item => item.id != id);
 }    
-
-console.log(deletePerson(3))
-
-//resposta no console:  
-
-{
-    "id" : 1, 
-    "name": "Ada Lovelace", 
-    "bio" : "Ada Lovelace, foi uma matemática e escritora inglesa reconhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina"
-},
-{
-    "id" : 2, 
-    "name": "Alan Turing", 
-    "bio" : "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial"
-},  
-{
-    "id" : 4, 
-    "name": "Nicolau Copérnico", 
-    "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
-}
-];
-
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Deletar um item da lista pelo ID</h3>
+                        <form id="deleteForm" class="container-formulario">
+                            <label for="personIdDelete">Digite o ID para deletar:</label>
+                            <input type="number" id="personIdDelete" name="personIdDelete" required>
+                            <button type="submit">Deletar</button>
+                        </form>
+                        <p id="deleteResult" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -180,33 +177,25 @@ console.log(deletePerson(3))
 function updatePerson(id: number, novoNome: string, novaBio: string): Person[] {
     return list.map(item => item.id === id ? { ...item, name: novoNome, bio: novaBio } : item);
 }
-
-console.log(updatePerson(4, 'Luffy', 'Rei dos piratas'))
-
-//resposta no console:
-
-{
-    "id" : 1, 
-    "name": "Ada Lovelace", 
-    "bio" : "Ada Lovelace, foi uma matemática e escritora inglesa reconhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina"
-},
-{
-    "id" : 2, 
-    "name": "Alan Turing", 
-    "bio" : "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial"
-},
-{   "id" : 3, 
-    "name": "Nikola Tesla", 
-    "bio" : "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada."
-},
-{
-    "id" : 4, 
-    "name": "Luffy", 
-    "bio": "Rei dos piratas"
-}
-
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Atualizar nome e bio de uma personalidade</h3>
+                        <form id="updateForm" class="container-formulario">
+                            <label for="personIdUpdate">Digite o ID:</label>
+                            <input type="number" id="personIdUpdate" name="personIdUpdate" required>
+                            <br>
+                            <label for="newName">Novo Nome:</label>
+                            <input type="text" id="newName" name="newName" required>
+                            <br>
+                            <label for="newBio">Nova Bio:</label>
+                            <input type="text" id="newBio" name="newBio" required>
+                            <br>
+                            <button type="submit">Atualizar</button>
+                        </form>
+                        <p id="updateResult" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -225,16 +214,18 @@ function returnBioPersonImperative(id: number): string {
     }
     return 'Bio não econtrada para o id indicado';
 }
-
-console.log('Bio:', returnBioPersonImperative(3))
-
-//resposta no console:
-
-Bio: Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, 
-mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada.
-
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Retornar a bio a partir de um ID</h3>
+                        <form id="returnBioFormImperative" class="container-formulario">
+                            <label for="personIdBioImperative">Digite o ID:</label>
+                            <input type="number" id="personIdBioImperative" name="personIdBioImperative" required>
+                            <button type="submit">Buscar Bio</button>
+                        </form>
+                        <p id="bioResultImperative" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -250,14 +241,18 @@ function returnNamePersonImperative(id: number): string {
     return 'Nome não econtrada para o id indicado';
 }
 
-console.log('Nome:', returnNamePersonImperative(2))
-
-//resposta no console:
-
-Nome: Alan Turing
-
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Retornar o nome a partir de um ID</h3>
+                        <form id="returnNameFormImperative" class="container-formulario">
+                            <label for="personIdNameImperative">Digite o ID:</label>
+                            <input type="number" id="personIdNameImperative" name="personIdNameImperative" required>
+                            <button type="submit">Buscar Nome</button>
+                        </form>
+                        <p id="nameResultImperative" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -274,27 +269,18 @@ function deletePersonImperative(id: number): Person[] {
     return list;
 }   
 
-console.log(deletePersonImperative(1))
-
-//resposta no console:
-
-{
-    "id" : 2, 
-    "name": "Alan Turing", 
-    "bio" : "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial"
-},
-{   "id" : 3, 
-    "name": "Nikola Tesla", 
-    "bio" : "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada."
-},
-{
-    "id" : 4, 
-    "name": "Nicolau Copérnico", 
-    "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
-}
-
                             </code>
                         </pre>
+                    </div>
+
+                    <div>
+                        <h3>Deletar um item da lista pelo ID</h3>
+                        <form id="deletePersonFormImperative" class="container-formulario">
+                            <label for="personIdDeleteImperative">Digite o ID:</label>
+                            <input type="number" id="personIdDeleteImperative" name="personIdDeleteImperative" required>
+                            <button type="submit">Deletar</button>
+                        </form>
+                        <p id="deleteResultImperative" class="persons-resultado"></p>
                     </div>
 
                     <div>
@@ -311,38 +297,26 @@ function updatePersonImperative(id: number, novoNome: string, novaBio: string): 
     }
     return list;
 }
-
-console.log(updatePersonImperative(4, 'Marie Curie', 'Braba da Quimica'))
-
-//resposta no console:
-
-{
-    "id" : 1, 
-    "name": "Ada Lovelace", 
-    "bio" : "Ada Lovelace, foi uma matemática e escritora inglesa reconhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina"
-},
-{
-    "id" : 2, 
-    "name": "Alan Turing", 
-    "bio" : "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial"
-},
-{   "id" : 3, 
-    "name": "Nikola Tesla", 
-    "bio" : "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada."
-},
-{
-    "id" : 4, 
-    "name": "Marie Curie", 
-    "bio": "Braba da Quimica"
-}
-
                             </code>
                         </pre>
                     </div>
-
                     <div>
-                        <h2>Para visualizar as respostas acesse o console do seu navegador.</h2>
+                        <h3>Atualizar nome e bio de uma personalidade</h3>
+                        <form id="updatePersonFormImperative" class="container-formulario">
+                            <label for="personIdUpdateImperative">Digite o ID:</label>
+                            <input type="number" id="personIdUpdateImperative" name="personIdUpdateImperative" required>
+                            <br>
+                            <label for="newNameImperative">Novo Nome:</label>
+                            <input type="text" id="newNameImperative" name="newNameImperative" required>
+                            <br>
+                            <label for="newBioImperative">Nova Bio:</label>
+                            <input type="text" id="newBioImperative" name="newBioImperative" required>
+                            <br>
+                            <button type="submit">Atualizar</button>
+                        </form>
+                        <p id="updateResultImperative" class="persons-resultado"></p>
                     </div>
+
                 </div>
             </section>
 
